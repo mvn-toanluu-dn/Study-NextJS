@@ -1,0 +1,212 @@
+.page-header {
+  width: 100%;
+  .header {
+    @include pxRem(padding, 10 30 10 26);
+    justify-content: space-between;
+    align-items: center;
+    &-logo {
+      @include pxRem(width, 111);
+      @include pxRem(height, 40);
+    }
+    &-menu {
+      align-items: center;
+      @include pxRem(margin-right, 24);
+      &-list {
+        align-items: center;
+      }
+      &-item > a {
+        color: map-get($colors, txt-header);
+        display: flex;
+        &:hover {
+          color: map-get($colors, txt-black);
+        }
+      }
+      &-item:not(:last-child) {
+        @include pxRem(margin-right, 23);
+      }
+      &-item {
+        @include pxRem(padding, 18 2);
+        font-weight: map-get($font-weight, medium);
+        cursor: pointer;
+        position: relative;
+        &:hover > .sub-menu {
+          opacity: 1;
+          visibility: visible;
+        }
+        .icon {
+          @include pxRem(margin-left, 5);
+        }
+        .sub-menu {
+          @include pxRem(margin-top, 20);
+          @include pxRem(border-radius, 8);
+          @include pxRem(min-width, 220);
+          position: absolute;
+          left: 0;
+          background-color: map-get($colors, white);
+          box-shadow: 0 #{f-pxRem(4)} #{f-pxRem(10)} #{f-pxRem(-2)} rgba(0, 0, 0, 0.1);
+          opacity: 0;
+          visibility: hidden;
+          z-index: map-get($zindexs, submenu);
+          transition: all 0.3s linear;
+          .sub-item {
+            @include pxRem(padding, 16 28);
+            position: relative;
+            &:hover > .sub-menu {
+              position: absolute;
+              top: 100%;
+            }
+            &:hover,
+            &:hover > a {
+              background-color: map-get($colors, second-primary);
+              border-radius: inherit;
+              color: white;
+            }
+            &-link {
+              @include pxRem(font-size, 15);
+              position: relative;
+              font-weight: map-get($font-weight, medium);
+            }
+          }
+        }
+      }
+    }
+    &-sub {
+      display: none;
+      cursor: pointer;
+    }
+    &-btn > a {
+      @include pxRem(padding, 4 24 4 24);
+      @include pxRem(font-size, 12);
+      @include pxRem(border-radius, 80);
+      @include pxRem(width, 116);
+      @include pxRem(height, 34);
+      @include pxRem(line-height, 24);
+      font-weight: map-get($font-weight, verythin);
+      background-color: map-get($colors, primary);
+      color: map-get($colors, white);
+      &:hover {
+        background-color: map-get($colors, second-primary);
+      }
+    }
+    &-btn {
+      @include pxRem(margin-left, 10);
+    }
+  }
+}
+@include respond-below(large) {
+  .page-header {
+    .header-sub {
+      @include pxRem(font-size, 28);
+      @include pxRem(margin-right, 30);
+      @include pxRem(width, 28);
+      margin-left: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        color: map-get($colors, second-primary);
+      }
+    }
+    .header {
+      @include pxRem(padding, 16 24);
+      &-nav {
+        display: none;
+      }
+      &-logo {
+        @include pxRem(width, 156);
+        text-align: center;
+      }
+      &-btn {
+        @include pxRem(margin-left, 50);
+      }
+      &-nav-small {
+        @include pxRem(margin-top, 25);
+        // @include pxRem(max-width, 1023);
+        .menu-item,
+        .menu-item:first-child {
+          @include pxRem(padding, 16 28);
+          @include pxRem(line-height, 24);
+          cursor: pointer;
+        }
+        .menu-item:first-child {
+          background-color: map-get($colors, primary);
+          a {
+            color: white;
+          }
+        }
+        .menu-item:not(:first-child) {
+          &:hover {
+            background-color: map-get($colors, second-primary);
+            // color: white;
+          }
+          &:hover > .sub-menu {
+            color: white;
+            a {
+              color: white;
+            }
+          }
+        }
+        .sub-menu > .icon-menu {
+          text-align: right;
+        }
+      }
+    }
+    .menu-small {
+      @include pxRem(padding-left, 20);
+      &:hover {
+        color: white;
+      }
+      .animation-show-menu {
+        @include pxRem(padding, 16 0);
+        animation: submenu-show 1s;
+      }
+      .animation-close-menu {
+        height: 0 !important;
+        opacity: 0;
+        visibility: hidden;
+        animation: submenu-close 1s;
+      }
+      .menu-item-sub {
+        color: map-get($colors, txt-black);
+        &:hover {
+          color: map-get($colors, white);
+        }
+      }
+    }
+  }
+}
+@include respond-below(medium) {
+  .page-header {
+    .header {
+      @include pxRem(padding, 16);
+      &-logo {
+        width: 31%;
+      }
+      &-sub {
+        @include pxRem(margin-left, 15);
+        width: 33.33%;
+        justify-content: flex-end;
+      }
+      &-menu {
+        width: 60%;
+        margin: 0;
+        justify-content: space-between;
+      }
+      &-btn {
+        width: 33.33%;
+        margin: 0;
+        text-align: right;
+        .links {
+          @include pxRem(width, 115);
+        }
+      }
+    }
+  }
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: map-get($colors, white);
+  z-index: map-get($zindexs, submenu);
+}

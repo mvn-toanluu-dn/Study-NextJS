@@ -1,0 +1,85 @@
+.is-hidden {
+  display: none;
+}
+.section-padding {
+  @include pxRem(padding, 80 0);
+  @include respond-below(large) {
+    @include pxRem(padding, 40 40);
+  }
+  @include respond-below(medium) {
+    @include pxRem(padding, 32 16);
+  }
+}
+.dis-none {
+  display: none;
+}
+.dis-block {
+  display: block;
+}
+.mb-16 {
+  @include pxRem(margin-bottom, 16);
+}
+.m-16 {
+  @include pxRem(margin, 32 0 16);
+}
+
+.sub-title {
+  @include pxRem(font-size, 16);
+  @include pxRem(line-height, 32);
+  font-weight: map-get($font-weight, thin);
+  color: map-get($colors, txt-info);
+}
+@include respond-above(large) {
+  .mr-12 {
+    @include pxRem(margin-right, 12);
+  }
+  .mt-40 {
+    @include pxRem(margin-top, 40);
+  }
+  .mb-40 {
+    @include pxRem(margin-bottom, 40);
+  }
+  .mtb-40 {
+    @include pxRem(margin, 40 0);
+  }
+  .mlr-40 {
+    @include pxRem(margin, 0 40);
+  }
+  h4.title {
+    @include pxRem(margin-top, 8);
+    @include pxRem(font-size, 32);
+    @include pxRem(line-height, 48);
+    font-weight: map-get($font-weight, medium);
+  }
+}
+@include respond-below(large) {
+  h4.title {
+    @include pxRem(font-size,24);
+    @include pxRem(line-height, 40);
+  }
+  h2.title,h3.title {
+    @include pxRem(font-size, 32);
+    @include pxRem(line-height, 48);
+  }
+
+}
+.section-background {
+  background-color: map-get($colors, background-color);
+}
+.title {
+  @include pxRem(font-size, 40);
+  @include pxRem(line-height, 56);
+  color: map-get($colors, txt-black);
+  font-weight: map-get($font-weight, medium);
+}
+@include respond-below(large) {
+  .mb-20 {
+    @include pxRem(margin-bottom, 20 !important);
+  }
+  .mt-20 {
+    @include pxRem(margin-top, 20);
+  }
+  .ptb-20 {
+    @include pxRem(padding, 20 0);
+  }
+}
