@@ -85,7 +85,7 @@ function Intro() {
             </div>
           </div>
           <div className="intro-img col-6">
-            <Image src={Images.intro_house} alt="" />
+            <Image src={Images.intro_house} alt="" priority />
           </div>
         </div>
       </div>

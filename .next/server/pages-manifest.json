@@ -1,6 +1,15 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
+  "/Features/Home/Dream": "pages/Features/Home/Dream.html",
+  "/Features/Home/Needs": "pages/Features/Home/Needs.html",
+  "/Features/Home/Product": "pages/Features/Home/Product.html",
+  "/Features/Home/Service": "pages/Features/Home/Service.html",
+  "/Features/Home/Vision": "pages/Features/Home/Vision.html",
+  "/Features/Home": "pages/Features/Home.html",
+  "/api/hello": "pages/api/hello.js",
+  "/": "pages/index.html",
   "/_error": "pages/_error.js",
-  "/": "pages/index.js"
+  "/Features/Home/Intro": "pages/Features/Home/Intro.html",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
 }
