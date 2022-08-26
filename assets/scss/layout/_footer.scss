@@ -115,4 +115,25 @@
       }
     }
   }
+  @include respond-below(medium) {
+    .footer {
+      &-item:first-child {
+        @include pxRem(margin-bottom, 24);
+        width: 100%;
+      }
+      &-item:nth-child(2) {
+        width: 40%;
+      }
+      &-item:nth-child(3) {
+        width: 60%;
+        padding: 0;
+      }
+      &-item:last-child {
+        @include pxRem(margin-top, 24);
+      }
+      &-img-info {
+        margin: 0;
+      }
+    }
+  }
 }

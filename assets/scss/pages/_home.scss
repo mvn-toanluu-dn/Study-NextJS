@@ -493,8 +493,8 @@
         @include pxRem(margin-bottom, 16);
       }
       &-item-title {
-        @include pxRem(font-size, 24!important);
-        @include pxRem(line-height, 40!important);
+        @include pxRem(font-size, 24);
+        @include pxRem(line-height, 40);
       }
       &-subtitle {
         @include pxRem(margin-bottom, 32);
@@ -671,6 +671,43 @@
           @include pxRem(margin-top, 4);
           width: 100%;
         }
+      }
+    }
+    .needs {
+      &-title {
+        @include pxRem(font-size, 24);
+        @include pxRem(line-height, 40);
+      }
+      &-item {
+        flex-wrap: wrap;
+        &-icon {
+          @include pxRem(margin-bottom, 15);
+        }
+        &-title {
+          @include pxRem(font-size, 16);
+          @include pxRem(line-height, 24);
+        }
+      }
+    }
+    .dream {
+      &-img {
+        @include pxRem(height, 240);
+        @include pxRem(margin-bottom, 12);
+        display: block;
+        width: 100%;
+        span, img {
+          width: 100% !important;
+        }
+      }
+      &-title {
+        @include pxRem(font-size, 24);
+        @include pxRem(line-height, 40);
+      }
+      &-item-img {
+        display: none;
+      }
+      &-content .btn.btn-get {
+        width: 100%;
       }
     }
   }

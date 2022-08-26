@@ -48,9 +48,7 @@ function Service() {
           </p>
         </div>
         <ul className="service-list row row-no-gutters">
-          {services.map((item) => {
-            let items = <></>;
-            items = (
+          {services.map((item) => (
               <li className="service-item col-3" key={item.number}>
                 <div className="service-img">
                   <Image src={item.img} alt="" />
@@ -60,9 +58,7 @@ function Service() {
                   <p className="service-info-text sub-title">{item.text}</p>
                 </div>
               </li>
-            );
-            return items;
-          })}
+            ))}
         </ul>
         <div className="service-bottom flex justify-content-between align-items-center mt-40">
           <p className="service-bottom-text sub-title">

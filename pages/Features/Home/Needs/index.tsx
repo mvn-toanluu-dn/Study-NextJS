@@ -38,9 +38,7 @@ function Needs() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
           <ul className="needs-list row row-no-gutters">
-            {needs.map((item, index) => {
-                let items = <></>;
-                items = (
+            {needs.map((item, index) => (
                     <li className="needs-item flex" key={index}>
                         <i className="needs-item-icon">{item.icon}</i>
                         <div className="needs-item-content">
@@ -48,9 +46,7 @@ function Needs() {
                             <p className="need-item-subtitle sub-title">{item.info}</p>
                         </div>
                     </li>
-                );
-                return items;
-            })}
+                ))}
           </ul>
         </div>
         <div className="needs-img col-6">

@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useRef, useEffect } from "react";
 import { MdLocationPin } from "react-icons/md";
 import { Images } from "../../../../assets/images";
-import FadeIn from "../../../components/Animations/FadeIn";
+import FadeIn from "../../../../components/Animations/FadeIn";
 function Product() {
   type Products = {
     number: number;

@@ -8,9 +8,11 @@
       @include pxRem(width, 111);
       @include pxRem(height, 40);
     }
+    &-nav {
+      @include pxRem(margin-right, 24);
+    }
     &-menu {
       align-items: center;
-      @include pxRem(margin-right, 24);
       &-list {
         align-items: center;
       }

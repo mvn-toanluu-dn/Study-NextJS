@@ -37,17 +37,13 @@ function Dream() {
               Get Quote Now
             </a>
             <ul className="dream-list row row-no-gutters">
-              {dreams.map((item, index) => {
-                let items = <></>;
-                items = (
-                  <li className="dream-item col-4" key={index}>
-                    <div className="dream-item-img">
-                      <Image src={item.img} alt="" />
-                    </div>
-                  </li>
-                );
-                return items;
-              })}
+              {dreams.map((item, index) => (
+                <li className="dream-item col-4" key={index}>
+                <div className="dream-item-img">
+                  <Image src={item.img} alt="" />
+                </div>
+              </li>
+              ))}
             </ul>
           </div>
         </div>
