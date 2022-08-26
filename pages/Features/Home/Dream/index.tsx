@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Images } from "../../../../assets/images";
+import Link from "next/link";
 function Dream() {
   type Dreams = {
     img: string;
@@ -33,9 +34,11 @@ function Dream() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <a className="btn btn-get mb-16" href="/#">
+            <Link href="/#">
+            <a className="btn btn-get mb-16">
               Get Quote Now
             </a>
+            </Link>
             <ul className="dream-list row row-no-gutters">
               {dreams.map((item, index) => (
                 <li className="dream-item col-4" key={index}>

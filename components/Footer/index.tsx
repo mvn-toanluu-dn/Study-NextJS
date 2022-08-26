@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Images } from "../../assets/images";
 import {FaPhoneAlt, FaEnvelope, FaMapMarkerAlt} from "react-icons/fa";
+import Link from "next/link";
 function Footer() {
   type Useful = {
     info: string;
@@ -57,9 +58,11 @@ function Footer() {
               <ul className="footer-item-list">
                 {links.map((item, index) => (
                     <li className="footer-item-list-info" key={index}>
-                      <a href="/#" className="footer-item-link">
+                      <Link href="/#">
+                      <a className="footer-item-link">
                         {item.info}
                       </a>
+                      </Link>
                     </li>
                   ))}
               </ul>
@@ -69,10 +72,12 @@ function Footer() {
               <ul className="footer-info-list">
                 {info.map((item, index) => (
                     <li className="footer-info-item" key={index}>
-                      <a href="/#">
+                      <Link href="/#">
+                      <a>
                       <i className="footer-icon">{item.icon}</i>
                       <span className="footer-detail sub-title">{item.detail}</span>
                       </a> 
+                      </Link>
                     </li>
                   )
                 )}

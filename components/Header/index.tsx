@@ -4,6 +4,7 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { GoThreeBars } from "react-icons/go";
 import { FaRegWindowClose } from "react-icons/fa";
 import { Images } from "../../assets/images/index";
+import Link from "next/link";
 function Header() {
   const headerRef = React.useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -88,69 +89,93 @@ function Header() {
                   <a href="/#">Home</a>
                 </li>
                 <li className="header-menu-item menu-down">
-                  <a href="/#">
+                  <Link href="/#">
+                  <a>
                     Listing
                     <FiChevronDown className="icon" />
                   </a>
+                  </Link>
                   <ul className="sub-menu">
                     <li className="sub-item">
-                      <a className="sub-item-link" href="/#">
+                      <Link href="/#">
+                      <a className="sub-item-link">
                         Details Listing
                       </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
                 <li className="header-menu-item">
-                  <a href="/#">Services</a>
+                  <Link href="/#">
+                  <a>Services</a>
+                  </Link>
                 </li>
                 <li className="header-menu-item menu-down">
-                  <a href="/#">
+                  <Link href="#">
+                  <a>
                     Blog
                     <FiChevronDown className="icon" />
                   </a>
+                  </Link>
 
                   <ul className="sub-menu">
                     <li className="sub-item">
-                      <a className="sub-item-link" href="/#">
+                      <Link href="/#">
+                      <a className="sub-item-link">
                         Single Post
                       </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
                 <li className="header-menu-item menu-down">
-                  <a href="/#">
+                  <Link href="/#">
+                  <a>
                     Page
                     <FiChevronDown className="icon" />
                   </a>
+                  </Link>
 
                   <ul className="sub-menu">
                     <li className="sub-item">
-                      <a className="sub-item-link" href="/#">
+                      <Link href="/#">
+                      <a className="sub-item-link">
                         404
                       </a>
+                      </Link>
                     </li>
                     <li className="sub-item">
-                      <a className="sub-item-link" href="/#">
+                      <Link href="/#">
+                      <a className="sub-item-link">
                         Gallery
                       </a>
+                      </Link>
                     </li>
                     <li className="sub-item">
-                      <a className="sub-item-link" href="/#">
+                    <Link href="/#">
+                      <a className="sub-item-link">
                         Help Center
                       </a>
+                    </Link>
                     </li>
                     <li className="sub-item">
-                      <a className="sub-item-link" href="/#">
+                    <Link href="/#">
+                      <a className="sub-item-link">
                         Team
                       </a>
+                    </Link>
                     </li>
                   </ul>
                 </li>
                 <li className="header-menu-item">
-                  <a href="/#">About</a>
+                <Link href="/#">
+                  <a>About</a>
+                </Link>
                 </li>
                 <li className="header-menu-item">
-                  <a href="/#">Contact Us</a>
+                <Link href="/#">
+                  <a>Contact Us</a>
+                </Link>
                 </li>
               </ul>
             </nav>
@@ -162,7 +187,9 @@ function Header() {
               )}
             </div>
             <div className="header-btn">
+            <Link href="/#">
             <a className="btn links">Get a Quote</a>
+            </Link>
             </div>
           </div>
         </div>
@@ -177,7 +204,9 @@ function Header() {
                 return (
                   <li className="menu-item" key={`menu-item-${index}`}>
                   <div className="sub-menu flex">
+                  <Link href="/#">
                     <a className={`col-6`}>{item.title}</a>
+                  </Link>
                     {item.addNew && (
                       <i className={`icon-menu col-6`}>
                         {!item.showMenu ? (

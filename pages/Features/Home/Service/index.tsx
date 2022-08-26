@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { Images } from "../../../../assets/images";
 function Service() {
@@ -65,7 +66,9 @@ function Service() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
           </p>
+          <Link href="/#">
           <a className="btn btn-faq second">See Our FAQ</a>
+          </Link>
         </div>
       </div>
     </section>

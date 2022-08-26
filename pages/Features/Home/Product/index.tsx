@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { useRef, useEffect } from "react";
 import { MdLocationPin } from "react-icons/md";
 import { Images } from "../../../../assets/images";
@@ -125,9 +126,11 @@ function Product() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
           </p>
-          <a href="/#" className="btn btn-more second" ref={productBtnRef}>
+          <Link href="/#">
+          <a className="btn btn-more second" ref={productBtnRef}>
             See More
           </a>
+          </Link>
         </div>
       </div>
     </section>
