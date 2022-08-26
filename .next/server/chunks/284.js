@@ -19,6 +19,9 @@ var jsx_runtime_ = __webpack_require__(997);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
 var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
+// EXTERNAL MODULE: ./node_modules/next/link.js
+var next_link = __webpack_require__(1664);
+var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
 var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
@@ -62,6 +65,7 @@ function FadeIn({ productRef , infoRef , productListRef , productTextRef , produ
 /* harmony default export */ const Animations_FadeIn = (FadeIn);
 
 ;// CONCATENATED MODULE: ./pages/Features/Home/Product/index.tsx
+
 
 
 
@@ -212,11 +216,13 @@ function Product() {
                                         " "
                                     ]
                                 }),
-                                /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                                /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                     href: "/#",
-                                    className: "btn btn-more second",
-                                    ref: productBtnRef,
-                                    children: "See More"
+                                    children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                                        className: "btn btn-more second",
+                                        ref: productBtnRef,
+                                        children: "See More"
+                                    })
                                 })
                             ]
                         })

@@ -14,9 +14,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5675);
 /* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _assets_images__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6883);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1664);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _assets_images__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6883);
+
 
 
 
@@ -25,25 +28,25 @@ function Service() {
     const services = [
         {
             number: 0,
-            img: _assets_images__WEBPACK_IMPORTED_MODULE_3__/* .Images.service1 */ .r.service1,
+            img: _assets_images__WEBPACK_IMPORTED_MODULE_4__/* .Images.service1 */ .r.service1,
             title: "View Listing",
             text: "Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
         },
         {
             number: 1,
-            img: _assets_images__WEBPACK_IMPORTED_MODULE_3__/* .Images.service2 */ .r.service2,
+            img: _assets_images__WEBPACK_IMPORTED_MODULE_4__/* .Images.service2 */ .r.service2,
             title: "Contact Us",
             text: "Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
         },
         {
             number: 2,
-            img: _assets_images__WEBPACK_IMPORTED_MODULE_3__/* .Images.service3 */ .r.service3,
+            img: _assets_images__WEBPACK_IMPORTED_MODULE_4__/* .Images.service3 */ .r.service3,
             title: "Request a Visit",
             text: "Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
         },
         {
             number: 3,
-            img: _assets_images__WEBPACK_IMPORTED_MODULE_3__/* .Images.service4 */ .r.service4,
+            img: _assets_images__WEBPACK_IMPORTED_MODULE_4__/* .Images.service4 */ .r.service4,
             title: "Buy The House",
             text: "Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
         }, 
@@ -104,9 +107,12 @@ function Service() {
                                 " "
                             ]
                         }),
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                            className: "btn btn-faq second",
-                            children: "See Our FAQ"
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
+                            href: "/#",
+                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
+                                className: "btn btn-faq second",
+                                children: "See Our FAQ"
+                            })
                         })
                     ]
                 })

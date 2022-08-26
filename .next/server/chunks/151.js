@@ -125,8 +125,7 @@ function Intro() {
                         className: "intro-img col-6",
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_1___default()), {
                             src: _assets_images_index__WEBPACK_IMPORTED_MODULE_3__/* .Images.intro_house */ .r.intro_house,
-                            alt: "",
-                            priority: true
+                            alt: ""
                         })
                     })
                 ]
