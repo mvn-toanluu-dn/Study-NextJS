@@ -210,9 +210,12 @@
       @include pxRem(margin-top, 8);
     }
     &-bottom {
-      .btn-faq.second {
+      .btn.btn-faq {
         @include pxRem(width, 176);
         margin: 0;
+        border: #{f-pxRem(1)} solid map-get($colors, txt-info);
+        background-color: map-get($colors, white);
+        color: map-get($colors, txt-black);
       }
     }
     &-img {
@@ -384,7 +387,13 @@
     }
     .product {
       &-title {
+        @include pxRem(font-size, 32);
+        @include pxRem(line-height, 48);
         width: 55%;
+        &-info {
+          @include pxRem(font-size, 24);
+          @include pxRem(line-height, 40);
+        }
       }
       &-content {
         align-items: flex-start !important;
@@ -637,15 +646,17 @@
       }
     }
     .service {
-      &-title,&-text,&-list {
+      &-title,
+      &-text,
+      &-list {
         padding: 0;
       }
       &-list .service-item {
         padding: 0;
       }
       &-title {
-        @include pxRem(font-size,24);
-        @include pxRem(line-height,40);
+        @include pxRem(font-size, 24);
+        @include pxRem(line-height, 40);
       }
       &-text {
         @include pxRem(margin-top, 8);
@@ -695,7 +706,8 @@
         @include pxRem(margin-bottom, 12);
         display: block;
         width: 100%;
-        span, img {
+        span,
+        img {
           width: 100% !important;
         }
       }
@@ -710,6 +722,12 @@
         width: 100%;
       }
     }
+  }
+  .vision-item.active:first-child {
+    animation: fadeInLeft 0.75s ease-in-out;
+  }
+  .vision-item.active:last-child {
+    animation: fadeInRight 0.75s ease-in-out;
   }
 }
 @keyframes fadeInLeft {

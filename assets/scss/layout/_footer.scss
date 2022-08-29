@@ -39,6 +39,11 @@
         @include pxRem(margin-top, 4);
         @include pxRem(padding-bottom, 4);
       }
+      &-link {
+        &:hover {
+          color: map-get($colors, black-footer);
+        }
+      }
     }
     &-img {
       img {
@@ -53,6 +58,9 @@
       @include pxRem(padding-left, 5);
       @include pxRem(font-size, 14);
       @include pxRem(line-height, 24);
+      &:hover {
+        color: map-get($colors, black-footer);
+      }
     }
     &-info-item > a {
       display: flex;

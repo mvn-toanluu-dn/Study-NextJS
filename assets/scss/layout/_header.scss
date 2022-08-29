@@ -99,7 +99,7 @@
   .page-header {
     .header-sub {
       @include pxRem(font-size, 28);
-      @include pxRem(margin-right, 30);
+      @include pxRem(margin-right, 25);
       @include pxRem(width, 28);
       margin-left: auto;
       display: flex;

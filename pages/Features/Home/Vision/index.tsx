@@ -1,7 +1,8 @@
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useRef,useEffect } from "react";
 import { Images } from "../../../../assets/images";
 import FadeIn from "../../../../components/Animations/FadeIn";
+import {onScroll} from "../../../../components/Animations/FadeLR";
 function Vision() {
   type Visions = {
     number: number;
@@ -23,7 +24,15 @@ function Vision() {
       img: Images.vision2,
     },
   ];
-  const visionLRRef = React.useRef<HTMLLIElement>(null);
+  useEffect(() => {
+    const handlerScroll =()=>{
+      const animated = document.querySelectorAll(".vision-item");
+    onScroll(animated)
+    }
+    
+    window.addEventListener("scroll", handlerScroll);
+    return () => window.removeEventListener("scroll",handlerScroll );
+},[]);
   return (
     <>
       {/* <FadeIn
