@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { Images } from "../../../../assets/images";
 import Link from "next/link";
+import { onScroll, simpleScroll} from "../../../../components/Animations/FadeLR";
 function Dream() {
   type Dreams = {
     img: string;
@@ -17,6 +18,23 @@ function Dream() {
       img: Images.dream3,
     },
   ];
+  useEffect(() => {
+    const handlerScroll =()=>{
+      const animated = document.querySelector(".dream-img");
+      const animateTitle = document.querySelector(".dream-title");
+      const animateSubTitle = document.querySelector(".dream-info");
+      const animateGet = document.querySelector(".btn-get");
+      const animateImgList = document.querySelectorAll(".dream-item-img");
+    simpleScroll(animated)
+    simpleScroll(animateTitle)
+    simpleScroll(animateSubTitle)
+    simpleScroll(animateGet)
+    onScroll(animateImgList)
+    }
+    
+    window.addEventListener("scroll", handlerScroll);
+    return () => window.removeEventListener("scroll",handlerScroll );
+},[]);
   return (
     <section className="section-dream section-padding">
       <div className="container">

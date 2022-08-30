@@ -1,7 +1,8 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { FiCheck } from "react-icons/fi";
 import { Images } from "../../../../assets/images";
+import { onScroll } from "../../../../components/Animations/FadeLR";
 function Needs() {
   type Needs = {
     icon: JSX.Element,
@@ -25,6 +26,17 @@ function Needs() {
       info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
   ];
+  useEffect(() => {
+    const handlerScroll =()=>{
+      const animateItem = document.querySelectorAll(".needs-list .needs-box");
+      const animateImg = document.querySelectorAll(".needs-img-item");
+    onScroll(animateItem)
+    onScroll(animateImg)
+    }
+    
+    window.addEventListener("scroll", handlerScroll);
+    return () => window.removeEventListener("scroll",handlerScroll );
+},[]);
   return (
     <section className="section-needs section-padding">
       <div className="container">
@@ -39,7 +51,7 @@ function Needs() {
           </p>
           <ul className="needs-list row row-no-gutters">
             {needs.map((item, index) => (
-                    <li className="needs-item flex" key={index}>
+                    <li className="needs-item flex needs-box" key={index}>
                         <i className="needs-item-icon">{item.icon}</i>
                         <div className="needs-item-content">
                             <h4 className="needs-item-title title">{item.title}</h4>
@@ -49,7 +61,7 @@ function Needs() {
                 ))}
           </ul>
         </div>
-        <div className="needs-img col-6">
+        <div className="needs-img  col-6">
             <div className="needs-img-item parent">
                 <Image src={Images.need1} alt="" />
             </div>

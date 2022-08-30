@@ -6,19 +6,10 @@ function FadeIn({
   productListRef,
   productTextRef,
   productBtnRef,
-  visionLRRef,
 }: any) {
-  // const productRef = React.useRef<HTMLDivElement>(null);
-  // const infoRef = React.useRef<HTMLDivElement>(null);
-  // const productListRef = React.useRef<HTMLUListElement>(null);
-  // const productTextRef = React.useRef<HTMLParagraphElement>(null);
-  // const productBtnRef = React.useRef<HTMLAnchorElement>(null);
   useEffect(() => {
     const onScroll = (scroll: Event) => {
       switch (true) {
-        // case window.scrollY >= 1250:
-        //     visionLRRef.current?.classList.add("fade-lr");
-        //     break;
         case window.scrollY >= 800:
           productTextRef.current?.classList.add("fade-left");
           productBtnRef.current?.classList.add("fade-right");

@@ -10,4 +10,12 @@ export const onScroll = (animate :any) => {
 
 };
 
+export const simpleScroll = (animate: any) => {
+  const windowHeight = window.innerHeight;
+  const elementTop = animate.getBoundingClientRect().top;
+  if (elementTop < windowHeight - 20) {
+    animate.classList.add("active");
+  }
+};
+
 

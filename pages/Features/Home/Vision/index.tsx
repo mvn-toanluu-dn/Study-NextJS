@@ -35,21 +35,12 @@ function Vision() {
 },[]);
   return (
     <>
-      {/* <FadeIn
-        productRef={productRef}
-        infoRef={infoRef}
-        productListRef={productListRef}
-        productTextRef={productTextRef}
-        productBtnRef={productBtnRef}
-        visionLRRef={visionLRRef}
-      /> */}
       <section className="section-vision section-padding">
         <div className="container">
           <ul className="vision-list row row-no-gutters">
             {visions.map((item) => (
               <li
                 className="vision-item flex col-6"
-                //   ref={visionLRRef}
                 key={item.number}
               >
                 <div className="vision-item-content mb-16">
