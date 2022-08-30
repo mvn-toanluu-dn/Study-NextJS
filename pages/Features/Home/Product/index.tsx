@@ -52,41 +52,8 @@ function Product() {
   const productListRef = React.useRef<HTMLUListElement>(null);
   const productTextRef = React.useRef<HTMLParagraphElement>(null);
   const productBtnRef = React.useRef<HTMLAnchorElement>(null);
-  // useEffect(() => {
-  //   const onScroll = (scroll : Event) => {
-  //         let pos = document.documentElement.scrollTop;
-          
-  //           if (window.scrollY >= 120) {
-  //               productRef.current?.classList.add("fade-left");
-  //               infoRef.current?.classList.add("fade-right");
-  //           } else {
-  //               productRef.current?.classList.remove("fade-left");
-  //               infoRef.current?.classList.remove("fade-right");
-  //           }
-  //           if (window.scrollY >= 200) {
-  //               productListRef.current?.classList.add("fade-in");
-  //           } else {
-  //             productListRef.current?.classList.remove("fade-in");
-  //           }
-  //           if (window.scrollY >= 800) {
-  //             productTextRef.current?.classList.add("fade-left");
-  //             productBtnRef.current?.classList.add("fade-right");
-  //         } else {
-  //           productTextRef.current?.classList.remove("fade-left");
-  //           productBtnRef.current?.classList.remove("fade-right")
-  //         }
-
-  //           // switch
-  //           console.log(pos);
-  //       }
-  //       window.addEventListener("scroll", onScroll);
-
-  //       return () => window.removeEventListener("scroll", onScroll);
-        
-  //   })
   return (
     <>
-    
     <section className="section-product section-padding">
       <div className="container">
         <div className="product-content mb-20 flex align-items-center">
