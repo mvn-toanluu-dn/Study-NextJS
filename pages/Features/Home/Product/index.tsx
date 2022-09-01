@@ -15,7 +15,7 @@ function Product() {
   };
   const products: Products[] = [
     {
-      number:0,
+      number: 0,
       img: Images.product1,
       title: "Ataz Standard House",
       address: "Pluto Street, Indonesia",
@@ -23,7 +23,7 @@ function Product() {
       icon: <MdLocationPin />,
     },
     {
-      number:1,
+      number: 1,
       img: Images.product2,
       title: "Qiri Minimalist House",
       address: "Jupiter Street, Indonesia",
@@ -31,7 +31,7 @@ function Product() {
       icon: <MdLocationPin />,
     },
     {
-      number:2,
+      number: 2,
       img: Images.product3,
       title: "Qanan Luxury House",
       address: "Mars Street, Indonesia",
@@ -39,7 +39,7 @@ function Product() {
       icon: <MdLocationPin />,
     },
     {
-      number:3,
+      number: 3,
       img: Images.product4,
       title: "Tingah Elegant House",
       address: "Venus Street, Indonesia",
@@ -54,26 +54,28 @@ function Product() {
   const productBtnRef = React.useRef<HTMLAnchorElement>(null);
   return (
     <>
-    <section className="section-product section-padding">
-      <div className="container">
-        <div className="product-content mb-20 flex align-items-center">
-          <div className="row row-no-gutters">
-          <h3 className="product-title title col-6" ref={productRef}>Featured Listing</h3>
-          <p className="product-text sub-title col-6" ref={infoRef}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+      <section className="section-product section-padding">
+        <div className="container">
+          <div className="product-content mb-20 flex align-items-center">
+            <div className="row row-no-gutters">
+              <h3 className="product-title title col-6" ref={productRef}>
+                Featured Listing
+              </h3>
+              <p className="product-text sub-title col-6" ref={infoRef}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
           </div>
-        </div>
-        <ul className="product-list-info ptb-20 row row-no-gutters" ref={productListRef} >
-          {products.map((item) => (
+          <ul
+            className="product-list-info ptb-20 row row-no-gutters"
+            ref={productListRef}
+          >
+            {products.map((item) => (
               <li className="product-item-info col-3" key={item.number}>
                 <h6 className="product-price-info">{item.price}</h6>
                 <div className="product-img-info mb-16">
-                  <Image
-                    src={item.img}
-                    alt=""
-                  />
+                  <Image src={item.img} alt="" />
                 </div>
                 <h4 className="product-title-info title mb-16">{item.title}</h4>
                 <ul className="product-list">
@@ -85,28 +87,28 @@ function Product() {
                   </li>
                 </ul>
               </li>
-            )
-          )}
-        </ul>
-        <div className="product-bottom flex align-items-center justify-content-between">
-          <p className="product-bottom-text sub-title" ref={productTextRef}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-          </p>
-          <Link href="/#">
-          <a className="btn btn-more second" ref={productBtnRef}>
-            See More
-          </a>
-          </Link>
+            ))}
+          </ul>
+          <div className="product-bottom flex align-items-center justify-content-between">
+            <p className="product-bottom-text sub-title" ref={productTextRef}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+            </p>
+            <Link href="/#">
+              <a className="btn btn-more second" ref={productBtnRef}>
+                See More
+              </a>
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
-    <FadeIn 
-        productRef ={productRef}
-        infoRef ={infoRef}
-        productListRef ={productListRef}
-        productTextRef ={productTextRef}
-        productBtnRef ={productBtnRef}/>
+      </section>
+      <FadeIn
+        productRef={productRef}
+        infoRef={infoRef}
+        productListRef={productListRef}
+        productTextRef={productTextRef}
+        productBtnRef={productBtnRef}
+      />
     </>
   );
 }

@@ -5,8 +5,9 @@ import { GoThreeBars } from "react-icons/go";
 import { FaRegWindowClose } from "react-icons/fa";
 import { Images } from "../../assets/images/index";
 import Link from "next/link";
+import { menu } from "../../data";
 // import MenuSmall from "../MenuSmall";
-// import ItemMenu from "../MenuSmall";
+import ItemMenu from "../MenuSmall";
 function Header() {
   const headerRef = React.useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -23,57 +24,6 @@ function Header() {
 
   const [isToggle, setIsToggle] = useState(false);
   const [active, setActive] = useState(false);
-  type Menu = {
-    title: string;
-    values?: string[];
-    addNew?: boolean;
-    showMenu: boolean;
-  };
-
-  const menu: Menu[] = [
-    {
-      title: "Home",
-      values: [],
-      addNew: false,
-      showMenu: false,
-    },
-    {
-      title: "Listing",
-      values: ["Details Listing"],
-      addNew: true,
-      showMenu: false,
-    },
-    {
-      title: "Services",
-      values: [],
-      addNew: false,
-      showMenu: false,
-    },
-    {
-      title: "Blog",
-      values: ["Single Post"],
-      addNew: true,
-      showMenu: false,
-    },
-    {
-      title: "Page",
-      values: ["404", "Gallery", "Help Center", "Team"],
-      addNew: true,
-      showMenu: false,
-    },
-    {
-      title: "About",
-      values: [],
-      addNew: false,
-      showMenu: false,
-    },
-    {
-      title: "Contact Us",
-      values: [],
-      addNew: false,
-      showMenu: false,
-    },
-  ];
 
   const [loadMenu, setLoadMenu] = useState(menu);
 
@@ -187,106 +137,19 @@ function Header() {
             </div>
           </div>
         </div>
-        {/* <MenuSmall item={loadMenu}/> */}
         {!isToggle ? (
           <div className="header-menu-small dis-none"></div>
         ) : (
           <div className="header-menu-small dis-block">
             <nav className="header-nav-small">
               <ul className="menu-list">
-                {loadMenu.map((item: any, index: number) => (
-                  <li
-                    key={index}
-                    className="menu-item"
-                    onClick={() => setActive(!active)}
-                  >
-                    <div className="sub-menu flex">
-                      <Link href="/#">
-                        <a className="col-6">{item.title}</a>
-                      </Link>
-                      {item.addNew && (
-                        <i
-                          className={`icon-menu col-6 ${active ? "show" : ""}`}
-                        >
-                          {!item.showMenu ? (
-                            <FiChevronDown className="down" />
-                          ) : (
-                            <FiChevronUp className="up"/>
-                          )}
-                        </i>
-                      )}
-                    </div>
-                  </li>
+                {menu.map((items, index) => (
+                  <ItemMenu key={index} {...items} />
                 ))}
               </ul>
             </nav>
           </div>
         )}
-
-        {/* {!isToggle ? (
-        <div className="header-menu-small dis-none"></div>
-      ) : (
-        <div className="header-menu-small dis-block">
-          <nav className="header-nav-small">
-            <ul className="menu-list">
-              {loadMenu.map((item,index)=> {
-                return (
-                  <li className="menu-item" key={`menu-item-${index}`}>
-                  <div className="sub-menu flex">
-                  <Link href="/#">
-                    <a className={`col-6`}>{item.title}</a>
-                  </Link>
-                    {item.addNew && (
-                      <i className={`icon-menu col-6`}>
-                        {!item.showMenu ? (
-                          <FiChevronDown 
-                            className="down"
-                            onClick={() => {
-                              setLoadMenu([
-                                ...loadMenu,
-                                item.showMenu = true
-                              ]);
-                            }}
-                          />
-                        ) : (
-                          <FiChevronUp
-                            className="up"
-                            onClick={() => {
-                              setLoadMenu([
-                                ...loadMenu,
-                                item.showMenu = false
-                              ]);
-                            }}
-                          />
-                        )}
-                      </i>
-                    )}
-                  </div>
-                  <ul className="menu-small">
-                    {item.values
-                      ? item.values.map((value, index) => {
-                          return item.showMenu ? (
-                            <li
-                              className="menu-item-sub animation-show-menu"
-                              key={`value-${index}`}
-                            >
-                              {value}
-                            </li>
-                          ) : (
-                            ""
-                          );
-                        })
-                      : ""}
-                  </ul>
-                </li>
-                )
-              })}
-           </ul>
-          </nav>
-        </div>
-      )}  */}
-        {/* <ItemMenu dropdownmenu="dropdown"></ItemMenu>
-      <ItemMenu dropdownmenu="dropdown"></ItemMenu> */}
       </header>
     </>
   );

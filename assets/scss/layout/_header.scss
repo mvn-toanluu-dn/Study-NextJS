@@ -136,7 +136,8 @@
             color: white;
           }
         }
-        .menu-item:not(:first-child) {
+        .menu-item:not(:first-child),
+        .menu-small {
           &:hover {
             background-color: map-get($colors, second-primary);
           }
@@ -147,14 +148,30 @@
             }
           }
         }
+        .menu-small,
+        .menu-item-sub.page {
+          @include pxRem(padding, 16 28 16 48);
+          @include pxRem(line-height, 24);
+          &:hover {
+            cursor: pointer;
+            a {
+              color: map-get($colors, white);
+            }
+          }
+        }
         .sub-menu > .icon-menu {
           text-align: right;
+        }
+        .menu-item-sub.page {
+          &:hover {
+            background-color: map-get($colors, second-primary);
+          }
         }
       }
     }
     .menu-small {
       @include pxRem(padding-left, 20);
-      &:hover {
+      &:hover > .menu-item-sub {
         color: white;
       }
       .animation-show-menu {
@@ -169,9 +186,6 @@
       }
       .menu-item-sub {
         color: map-get($colors, txt-black);
-        &:hover {
-          color: map-get($colors, white);
-        }
       }
     }
   }

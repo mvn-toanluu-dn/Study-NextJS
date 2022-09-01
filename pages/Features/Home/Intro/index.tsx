@@ -26,24 +26,29 @@ function Intro() {
     },
   ];
   useEffect(() => {
-    let valueDisplays:any = document.querySelectorAll(".intro-count-number-up") ;
+    let valueDisplays: any = document.querySelectorAll(
+      ".intro-count-number-up"
+    );
     let interval = 2000;
-    
-    valueDisplays.forEach((valueDisplays: {
-      textContent: number; getAttribute: (arg0: string) => string; 
-}) => {
-      let startValue = 0;
-      let endValue = parseInt(valueDisplays.getAttribute("data-val"));
-      let duration = Math.floor(interval / endValue);
-      let counter = setInterval(function () {
-        startValue +=1;
-        valueDisplays.textContent = startValue;
-        if(startValue == endValue) {
-          clearInterval(counter);
-        }
-      }, duration);
-    })
-  })
+
+    valueDisplays.forEach(
+      (valueDisplays: {
+        textContent: number;
+        getAttribute: (arg0: string) => string;
+      }) => {
+        let startValue = 0;
+        let endValue = parseInt(valueDisplays.getAttribute("data-val"));
+        let duration = Math.floor(interval / endValue);
+        let counter = setInterval(function () {
+          startValue += 1;
+          valueDisplays.textContent = startValue;
+          if (startValue == endValue) {
+            clearInterval(counter);
+          }
+        }, duration);
+      }
+    );
+  });
   return (
     <section className="section-intro section-padding">
       <div className="container">
@@ -65,7 +70,7 @@ function Intro() {
                 />
                 <button className="intro-btn">
                   <i className="btn btn-search">
-                  <BiSearch />
+                    <BiSearch />
                   </i>
                 </button>
               </div>
@@ -75,7 +80,10 @@ function Intro() {
                 {count.map((item) => (
                   <li className="intro-count-item col-4" key={item.number}>
                     <h4 className="intro-count-number">
-                      <span className="intro-count-number-up" data-val={item.number}>
+                      <span
+                        className="intro-count-number-up"
+                        data-val={item.number}
+                      >
                         0
                       </span>
                       {item.suffix}
@@ -87,7 +95,7 @@ function Intro() {
             </div>
           </div>
           <div className="intro-img col-6">
-            <Image src={Images.intro_house} loading="eager" alt=""/>
+            <Image src={Images.intro_house} loading="eager" alt="" />
           </div>
         </div>
       </div>
