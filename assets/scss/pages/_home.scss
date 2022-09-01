@@ -34,14 +34,22 @@
       background-color: map-get($colors, second-primary);
     }
     &-btn {
+      @include pxRem(border-top-right-radius, 80);
+      @include pxRem(border-bottom-right-radius, 80);
       @include pxRem(margin-right, 10);
       @include pxRem(width, 82);
       @include pxRem(height, 50);
-      @include pxRem(font-size, 20);
+      background-color: white;
+      border: none;
       position: absolute;
       right: 0;
       top: 50%;
       transform: translateY(-50%);
+      .btn-search {
+        @include pxRem(font-size, 20);
+        width: inherit;
+        height: inherit;
+      }
     }
     &-img {
       @include pxRem(padding-left, 57);

@@ -63,8 +63,10 @@ function Intro() {
                   placeholder="Search here"
                   type="search"
                 />
-                <button className="btn intro-btn">
+                <button className="intro-btn">
+                  <i className="btn btn-search">
                   <BiSearch />
+                  </i>
                 </button>
               </div>
             </form>

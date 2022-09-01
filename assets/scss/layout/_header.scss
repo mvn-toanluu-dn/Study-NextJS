@@ -131,7 +131,7 @@
           cursor: pointer;
         }
         .menu-item:first-child {
-          background-color: map-get($colors, primary);
+          background: map-get($colors, primary);
           a {
             color: white;
           }
@@ -139,7 +139,6 @@
         .menu-item:not(:first-child) {
           &:hover {
             background-color: map-get($colors, second-primary);
-            // color: white;
           }
           &:hover > .sub-menu {
             color: white;

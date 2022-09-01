@@ -5,32 +5,35 @@ import { GoThreeBars } from "react-icons/go";
 import { FaRegWindowClose } from "react-icons/fa";
 import { Images } from "../../assets/images/index";
 import Link from "next/link";
+// import MenuSmall from "../MenuSmall";
+// import ItemMenu from "../MenuSmall";
 function Header() {
   const headerRef = React.useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const onScroll = (scroll : Event) => {
-      if(window.scrollY >= 100) {
+    const onScroll = (scroll: Event) => {
+      if (window.scrollY >= 100) {
         headerRef.current?.classList.add("fixed");
       } else {
         headerRef.current?.classList.remove("fixed");
       }
-    }
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, [])
+  }, []);
 
   const [isToggle, setIsToggle] = useState(false);
-
+  const [active, setActive] = useState(false);
   type Menu = {
     title: string;
     values?: string[];
-    addNew: boolean;
+    addNew?: boolean;
     showMenu: boolean;
   };
 
   const menu: Menu[] = [
     {
       title: "Home",
+      values: [],
       addNew: false,
       showMenu: false,
     },
@@ -42,6 +45,7 @@ function Header() {
     },
     {
       title: "Services",
+      values: [],
       addNew: false,
       showMenu: false,
     },
@@ -59,11 +63,13 @@ function Header() {
     },
     {
       title: "About",
+      values: [],
       addNew: false,
       showMenu: false,
     },
     {
       title: "Contact Us",
+      values: [],
       addNew: false,
       showMenu: false,
     },
@@ -71,7 +77,7 @@ function Header() {
 
   const [loadMenu, setLoadMenu] = useState(menu);
 
-  // console.log(loadMenu);
+  console.log(loadMenu);
 
   return (
     <>
@@ -90,92 +96,80 @@ function Header() {
                 </li>
                 <li className="header-menu-item menu-down">
                   <Link href="/#">
-                  <a>
-                    Listing
-                    <FiChevronDown className="icon" />
-                  </a>
+                    <a>
+                      Listing
+                      <FiChevronDown className="icon" />
+                    </a>
                   </Link>
                   <ul className="sub-menu">
                     <li className="sub-item">
                       <Link href="/#">
-                      <a className="sub-item-link">
-                        Details Listing
-                      </a>
+                        <a className="sub-item-link">Details Listing</a>
                       </Link>
                     </li>
                   </ul>
                 </li>
                 <li className="header-menu-item">
                   <Link href="/#">
-                  <a>Services</a>
+                    <a>Services</a>
                   </Link>
                 </li>
                 <li className="header-menu-item menu-down">
                   <Link href="#">
-                  <a>
-                    Blog
-                    <FiChevronDown className="icon" />
-                  </a>
+                    <a>
+                      Blog
+                      <FiChevronDown className="icon" />
+                    </a>
                   </Link>
 
                   <ul className="sub-menu">
                     <li className="sub-item">
                       <Link href="/#">
-                      <a className="sub-item-link">
-                        Single Post
-                      </a>
+                        <a className="sub-item-link">Single Post</a>
                       </Link>
                     </li>
                   </ul>
                 </li>
                 <li className="header-menu-item menu-down">
                   <Link href="/#">
-                  <a>
-                    Page
-                    <FiChevronDown className="icon" />
-                  </a>
+                    <a>
+                      Page
+                      <FiChevronDown className="icon" />
+                    </a>
                   </Link>
 
                   <ul className="sub-menu">
                     <li className="sub-item">
                       <Link href="/#">
-                      <a className="sub-item-link">
-                        404
-                      </a>
+                        <a className="sub-item-link">404</a>
                       </Link>
                     </li>
                     <li className="sub-item">
                       <Link href="/#">
-                      <a className="sub-item-link">
-                        Gallery
-                      </a>
+                        <a className="sub-item-link">Gallery</a>
                       </Link>
                     </li>
                     <li className="sub-item">
-                    <Link href="/#">
-                      <a className="sub-item-link">
-                        Help Center
-                      </a>
-                    </Link>
+                      <Link href="/#">
+                        <a className="sub-item-link">Help Center</a>
+                      </Link>
                     </li>
                     <li className="sub-item">
-                    <Link href="/#">
-                      <a className="sub-item-link">
-                        Team
-                      </a>
-                    </Link>
+                      <Link href="/#">
+                        <a className="sub-item-link">Team</a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
                 <li className="header-menu-item">
-                <Link href="/#">
-                  <a>About</a>
-                </Link>
+                  <Link href="/#">
+                    <a>About</a>
+                  </Link>
                 </li>
                 <li className="header-menu-item">
-                <Link href="/#">
-                  <a>Contact Us</a>
-                </Link>
+                  <Link href="/#">
+                    <a>Contact Us</a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -187,14 +181,49 @@ function Header() {
               )}
             </div>
             <div className="header-btn">
-            <Link href="/#">
-            <a className="btn links">Get a Quote</a>
-            </Link>
+              <Link href="/#">
+                <a className="btn links">Get a Quote</a>
+              </Link>
             </div>
           </div>
         </div>
-      </header>
-      {!isToggle ? (
+        {/* <MenuSmall item={loadMenu}/> */}
+        {!isToggle ? (
+          <div className="header-menu-small dis-none"></div>
+        ) : (
+          <div className="header-menu-small dis-block">
+            <nav className="header-nav-small">
+              <ul className="menu-list">
+                {loadMenu.map((item: any, index: number) => (
+                  <li
+                    key={index}
+                    className="menu-item"
+                    onClick={() => setActive(!active)}
+                  >
+                    <div className="sub-menu flex">
+                      <Link href="/#">
+                        <a className="col-6">{item.title}</a>
+                      </Link>
+                      {item.addNew && (
+                        <i
+                          className={`icon-menu col-6 ${active ? "show" : ""}`}
+                        >
+                          {!item.showMenu ? (
+                            <FiChevronDown className="down" />
+                          ) : (
+                            <FiChevronUp className="up"/>
+                          )}
+                        </i>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        )}
+
+        {/* {!isToggle ? (
         <div className="header-menu-small dis-none"></div>
       ) : (
         <div className="header-menu-small dis-block">
@@ -210,12 +239,12 @@ function Header() {
                     {item.addNew && (
                       <i className={`icon-menu col-6`}>
                         {!item.showMenu ? (
-                          <FiChevronDown
+                          <FiChevronDown 
                             className="down"
                             onClick={() => {
                               setLoadMenu([
-                                // ...loadMenu,
-                                // (item.showMenu = true),
+                                ...loadMenu,
+                                item.showMenu = true
                               ]);
                             }}
                           />
@@ -224,8 +253,8 @@ function Header() {
                             className="up"
                             onClick={() => {
                               setLoadMenu([
-                                // ...loadMenu,
-                                // (item.showMenu = false),
+                                ...loadMenu,
+                                item.showMenu = false
                               ]);
                             }}
                           />
@@ -244,12 +273,7 @@ function Header() {
                               {value}
                             </li>
                           ) : (
-                            <li
-                              className="menu-item-sub animation-close-menu"
-                              key={`value-${index}`}
-                            >
-                              {value}
-                            </li>
+                            ""
                           );
                         })
                       : ""}
@@ -257,10 +281,13 @@ function Header() {
                 </li>
                 )
               })}
-            </ul>
+           </ul>
           </nav>
         </div>
-      )}
+      )}  */}
+        {/* <ItemMenu dropdownmenu="dropdown"></ItemMenu>
+      <ItemMenu dropdownmenu="dropdown"></ItemMenu> */}
+      </header>
     </>
   );
 }
