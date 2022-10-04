@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useRef,useEffect } from "react";
+import React, { useEffect } from "react";
 import { Images } from "../../../../assets/images";
 import FadeIn from "../../../../components/Animations/FadeIn";
 import {onScroll} from "../../../../components/Animations/FadeLR";

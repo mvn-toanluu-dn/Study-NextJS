@@ -23,11 +23,11 @@ function Header() {
   }, []);
 
   const [isToggle, setIsToggle] = useState(false);
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
 
-  const [loadMenu, setLoadMenu] = useState(menu);
+  // const [loadMenu, setLoadMenu] = useState(menu);
 
-  console.log(loadMenu);
+  // console.log(loadMenu);
 
   return (
     <>
